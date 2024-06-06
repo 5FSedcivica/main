@@ -1,0 +1,201 @@
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collapsible Sections</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            animation: fadeInUp 1s ease-in-out;
+        }
+        .accordion .card-header {
+            background-color: #fff;
+            border: none;
+            padding: 0;
+        }
+        .accordion .btn-link {
+            color: #0d223d;
+            text-decoration: none;
+            font-size: 1.25rem;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 10px 15px;
+            background-color: #fff;
+            border: 1px solid #c5cad1;
+            border-left: 6px solid #0d223d;
+            border-radius: 0;
+            position: relative;
+        }
+        .accordion .btn-link:hover {
+            text-decoration: none;
+            color: #006400;
+        }
+        .accordion .btn-link:hover .icon {
+            color: #006400;
+        }
+        .accordion .card-body {
+            padding: 10px 15px;
+            border: 1px solid #c5cad1;
+            border-top: none;
+            background-color: #f8f9fa;
+            animation: slideInLeft 0.5s ease-in-out;
+        }
+        .accordion .card-body ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+        .accordion .card-body ul li {
+            margin-bottom: 10px;
+        }
+        .accordion .card-body ul li a {
+            color: #0d223d;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .accordion .card-body ul li a:hover {
+            color: #006400;
+            text-decoration: underline;
+        }
+        .accordion .card {
+            border: none;
+            margin-bottom: 10px;
+        }
+        .accordion .collapse.show + .card-header .btn-link .icon {
+            content: '-';
+        }
+        .accordion .btn-link .icon {
+            font-size: 1.25rem;
+            color: #0d223d;
+        }
+        .accordion .btn-link.collapsed .icon {
+            content: '+';
+        }
+        .accordion .card-header .btn-link[aria-expanded="true"] {
+            border-left-color: #006400;
+            color: #006400;
+        }
+        .accordion .card-header .btn-link[aria-expanded="true"] .icon {
+            color: #006400;
+        }
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="accordion" id="accordionExample">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Fact sheets <span class="icon">-</span>
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <ul>
+                            <li><a href="#">Household air pollution</a></li>
+                            <li><a href="#">Ambient (outdoor) air pollution</a></li>
+                            <li><a href="#">Electricity in health-care facilities</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Databases and tools <span class="icon">+</span>
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <!-- Content for Databases and tools -->
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Initiatives and groups <span class="icon">+</span>
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <!-- Content for Initiatives and groups -->
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingFour">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            Resolutions and decisions <span class="icon">+</span>
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <!-- Content for Resolutions and decisions -->
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingFive">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            Technical work <span class="icon">+</span>
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <!-- Content for Technical work -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#accordionExample').on('show.bs.collapse', function (e) {
+                $(e.target).prev('.card-header').find('.icon').text('-');
+                $(e.target).find('.card-body').css('animation', 'slideInLeft 0.5s ease-in-out');
+            });
+            $('#accordionExample').on('hide.bs.collapse', function (e) {
+                $(e.target).prev('.card-header').find('.icon').text('+');
+            });
+        });
+    </script>
+</body>
